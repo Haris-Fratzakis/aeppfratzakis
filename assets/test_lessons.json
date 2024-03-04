@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Lesson Title 1",
+    "summary": "Summary of the first lesson...",
+    "imageUrl": "../icon.png"
+  },
+  {
+    "id": 2,
+    "title": "Lesson Title 2",
+    "summary": "Summary of the second lesson...",
+    "imageUrl": "../icon.png"
+  }
+]

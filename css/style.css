@@ -77,3 +77,44 @@ a {
 a:hover {
   text-decoration: underline; /* Underline links on hover */
 }
+
+body {
+  font-family: Calibri, sans-serif;
+}
+
+header, footer {
+  text-align: left;
+  padding: 1rem;
+}
+
+.exercise-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.exercise {
+  display: flex;
+  align-items: center; /* This ensures vertical alignment is centered */
+  margin-bottom: 20px; /* Add some space between each exercise */
+}
+
+.exercise img {
+  width: 150px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Add some space between the image and the text content */
+}
+
+.exercise-content {
+  flex: 1; /* Allows the text content to fill the remaining space */
+}
+
+.exercise-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.exercise-summary {
+  font-size: 1rem;
+  color: #666;
+}

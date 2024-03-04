@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Exercise Title 1",
+    "summary": "Summary of the first exercise...",
+    "imageUrl": "../icon.png"
+  },
+  {
+    "id": 2,
+    "title": "Exercise Title 2",
+    "summary": "Summary of the second exercise...",
+    "imageUrl": "../icon.png"
+  }
+]
