@@ -155,23 +155,30 @@ header, footer {
   max-width: 800px;
   margin: auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
+
 form {
   display: flex;
   flex-direction: column;
 }
-label {
-  margin-top: 10px;
+
+/* Style each label and input/select/textarea to display in a block */
+label, input, select, textarea, input[type="submit"] {
+  display: block; /* Make each element take the full row */
+  margin-bottom: 10px; /* Add some space between form fields */
 }
+
 input[type=text], textarea, input[type=file] {
   width: 100%;
   padding: 8px;
-  margin-top: 5px;
+  margin-top: 2px;
   box-sizing: border-box;
 }
-input[type=submit] {
-  width: 150px;
-  padding: 10px;
-  margin-top: 20px;
-  cursor: pointer;
+
+input[type="submit"] {
+  width: auto; /* Adjust the submit button width as necessary */
+  padding: 10px 20px; /* Padding for the submit button */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
 }
