@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercises</title>
+  <title>Lesson Upload Form</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="Description of your website">
 
@@ -23,7 +23,6 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 <body>
-
 <!-- Header -->
 <header>
   <!-- Logo and Site Title -->
@@ -36,26 +35,38 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="lessons.php">Lessons</a></li>
+      <li><a href="lessons.html">Lessons</a></li>
       <li><a href="exercises.html">Exercises</a></li>
-      <li><a href="upload_exercise_form.html">Upload</a></li>
+      <li><a href="test_upload.html">Upload</a></li>
     </ul>
   </nav>
 </header>
 
-<main>
-  <section class="exercise-list">
-    <!-- Exercises will go here -->
-  </section>
-</main>
+<div class="container">
+  <h2>Upload Your Article</h2>
+  <form id="uploadForm" enctype="multipart/form-data" action="test_upload.php" method="POST">
+    <label for="contentType">Content Type:</label>
+    <select id="contentType" name="contentType" required>
+      <option value="lesson">Lesson</option>
+      <option value="exercise">Exercise</option>
+    </select>
+
+    <label for="title">Article Title:</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="content">Article Content:</label>
+    <textarea id="content" name="content" rows="10" required></textarea>
+
+    <label for="pictureToUpload">Upload Picture:</label>
+    <input type="file" id="pictureToUpload" name="pictureToUpload" accept="image/*">
+
+    <input type="submit" value="Submit Article">
+  </form>
+</div>
 
 <!-- Footer -->
 <footer>
   <p>© 2024 Aepp Fratzakis</p>
 </footer>
-
-<!-- Include your JavaScript file -->
-<script src="js/exercises.js"></script>
-
 </body>
 </html>

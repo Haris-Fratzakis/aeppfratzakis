@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercises</title>
+  <title>Lessons</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="Description of your website">
 
@@ -38,14 +38,30 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="lessons.php">Lessons</a></li>
       <li><a href="exercises.html">Exercises</a></li>
-      <li><a href="upload_exercise_form.html">Upload</a></li>
+      <li><a href="test_upload.html">Upload</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <section class="exercise-list">
-    <!-- Exercises will go here -->
+  <section class="lesson-list">
+    <?php
+    $dir = 'uploads/lesson'; // Adjust the path to your JSON files directory
+    
+    $jsonFiles = glob($dir . '/*.json');
+    
+    foreach ($jsonFiles as $file) {
+        $jsonContent = file_get_contents($file);
+        $lesson = json_decode($jsonContent, true); // Assuming each file contains a single lesson object
+        
+        echo '<div class="lesson">';
+        echo '<img src="' . htmlspecialchars($lesson['imagePath']) . '" alt="' . htmlspecialchars($lesson['title']) . '">';
+        echo '<div class="lesson-content">';
+        echo '<h2 class="lesson-title">' . htmlspecialchars($lesson['title']) . '</h2>';
+        echo '<p class="lesson-summary">' . htmlspecialchars($lesson['content']) . '</p>';
+        echo '</div></div>';
+    }
+    ?>
   </section>
 </main>
 
@@ -53,9 +69,6 @@
 <footer>
   <p>© 2024 Aepp Fratzakis</p>
 </footer>
-
-<!-- Include your JavaScript file -->
-<script src="js/exercises.js"></script>
 
 </body>
 </html>

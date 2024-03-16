@@ -11,7 +11,7 @@
 
 <h2>Upload New Article</h2>
 
-<form id="uploadForm" enctype="multipart/form-data" action="/upload" method="POST">
+<form id="uploadForm" enctype="multipart/form-data" action="upload.php" method="POST">
   <div class="form-group">
     <label for="title">Article Title:</label>
     <input type="text" id="title" name="title" placeholder="Enter title" required>
@@ -23,13 +23,13 @@
   </div>
 
   <div class="form-group">
-    <label for="imageUpload">Select Image:</label>
-    <input type="file" id="imageUpload" name="image" accept="image/*" required>
+    <label for="fileToUpload">Select Image:</label>
+    <input type="file" name="fileToUpload" id="fileToUpload">
   </div>
 
   <button type="submit">Upload Article</button>
 </form>
 
-<script src="js/upload.js"></script> <!-- Link to your JavaScript file -->
+<!--<script src="js/upload.js"></script> &lt;!&ndash; Link to your JavaScript file &ndash;&gt;-->
 </body>
 </html>
