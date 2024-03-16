@@ -87,6 +87,38 @@ header, footer {
   padding: 1rem;
 }
 
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lesson {
+  display: flex;
+  align-items: center; /* This ensures vertical alignment is centered */
+  margin-bottom: 20px; /* Add some space between each exercise */
+}
+
+.lesson img {
+  width: 150px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Add some space between the image and the text content */
+}
+
+.lesson-content {
+  flex: 1; /* Allows the text content to fill the remaining space */
+}
+
+.lesson-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.lesson-summary {
+  font-size: 1rem;
+  color: #666;
+}
+
 .exercise-list {
   display: flex;
   flex-direction: column;
@@ -119,34 +151,34 @@ header, footer {
   color: #666;
 }
 
-.lesson-list {
+.exam-list {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.lesson {
+.exam {
   display: flex;
   align-items: center; /* This ensures vertical alignment is centered */
   margin-bottom: 20px; /* Add some space between each exercise */
 }
 
-.lesson img {
+.exam img {
   width: 150px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   margin-right: 20px; /* Add some space between the image and the text content */
 }
 
-.lesson-content {
+.exam-content {
   flex: 1; /* Allows the text content to fill the remaining space */
 }
 
-.lesson-title {
+.exam-title {
   font-size: 1.5rem;
   margin: 0;
 }
 
-.lesson-summary {
+.exam-summary {
   font-size: 1rem;
   color: #666;
 }

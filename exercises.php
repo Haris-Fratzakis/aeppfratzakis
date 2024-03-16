@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercises</title>
+  <title>Μαθήματα</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="Description of your website">
 
@@ -35,17 +35,34 @@
   <!-- Navigation Menu -->
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="lessons.php">Lessons</a></li>
-      <li><a href="exercises.html">Exercises</a></li>
-      <li><a href="upload_exercise_form.html">Upload</a></li>
+      <li><a href="index.html">Αρχική</a></li>
+      <li><a href="lessons.php">Μαθήματα</a></li>
+      <li><a href="exercises.php">Ασκήσεις</a></li>
+      <li><a href="exams.php">Διαγωνίσματα</a></li>
+      <li><a href="test_upload.html">Ανέβασμα Αρχείου</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <section class="exercise-list">
-    <!-- Exercises will go here -->
+  <section class="exercises-list">
+    <?php
+    $dir = 'uploads/exercise'; // Adjust the path to your JSON files directory
+
+    $jsonFiles = glob($dir . '/*.json');
+
+    foreach ($jsonFiles as $file) {
+        $jsonContent = file_get_contents($file);
+        $exercise = json_decode($jsonContent, true); // Assuming each file contains a single lesson object
+
+        echo '<div class="exercise">';
+        echo '<img src="' . htmlspecialchars($exercise['imagePath']) . '" alt="' . htmlspecialchars($exercise['title']) . '">';
+        echo '<div class="exercise-content">';
+        echo '<h2 class="exercise-title">' . htmlspecialchars($exercise['title']) . '</h2>';
+        echo '<p class="exercise-summary">' . htmlspecialchars($exercise['content']) . '</p>';
+        echo '</div></div>';
+    }
+    ?>
   </section>
 </main>
 
@@ -53,9 +70,6 @@
 <footer>
   <p>© 2024 Aepp Fratzakis</p>
 </footer>
-
-<!-- Include your JavaScript file -->
-<script src="js/exercises.js"></script>
 
 </body>
 </html>

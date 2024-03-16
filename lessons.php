@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lessons</title>
+  <title>Μαθήματα</title>
   <link rel="stylesheet" href="css/style.css">
   <meta name="description" content="Description of your website">
 
@@ -35,10 +35,11 @@
   <!-- Navigation Menu -->
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="lessons.php">Lessons</a></li>
-      <li><a href="exercises.html">Exercises</a></li>
-      <li><a href="test_upload.html">Upload</a></li>
+      <li><a href="index.html">Αρχική</a></li>
+      <li><a href="lessons.php">Μαθήματα</a></li>
+      <li><a href="exercises.php">Ασκήσεις</a></li>
+      <li><a href="exams.php">Διαγωνίσματα</a></li>
+      <li><a href="test_upload.html">Ανέβασμα Αρχείου</a></li>
     </ul>
   </nav>
 </header>
@@ -47,13 +48,13 @@
   <section class="lesson-list">
     <?php
     $dir = 'uploads/lesson'; // Adjust the path to your JSON files directory
-    
+
     $jsonFiles = glob($dir . '/*.json');
-    
+
     foreach ($jsonFiles as $file) {
         $jsonContent = file_get_contents($file);
         $lesson = json_decode($jsonContent, true); // Assuming each file contains a single lesson object
-        
+
         echo '<div class="lesson">';
         echo '<img src="' . htmlspecialchars($lesson['imagePath']) . '" alt="' . htmlspecialchars($lesson['title']) . '">';
         echo '<div class="lesson-content">';
